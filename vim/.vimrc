@@ -1,4 +1,14 @@
 " plugins!
+let g:coc_global_extensions = [
+\ 'coc-json',
+\ 'coc-tsserver',
+\ 'coc-html',
+\ 'coc-css',
+\ 'coc-yaml',
+\ 'coc-solargraph',
+\ 'coc-python',
+\ 'coc-go',
+\ ]
 call plug#begin(expand('~/.vim/plugged'))
 Plug 'morhetz/gruvbox'
 Plug 'vim-ruby/vim-ruby'
@@ -13,7 +23,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-dotenv'
 Plug 'janko/vim-test'
-Plug 'psf/black'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 
 syntax on
@@ -27,6 +38,7 @@ set showcmd
 set showmatch
 set visualbell
 set noerrorbells
+set ttimeoutlen=0
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " folding
@@ -38,6 +50,10 @@ set foldmethod=indent   " fold based on indent level
 " terraform
 let g:terraform_align=1
 let g:terraform_fmt_on_save=1
+
+" golang (vim-go)
+let g:go_def_mode='gopls'
+let g:go_info_mode='gopls'
 
 " buffer navigation
 noremap <C-h> <C-w>h

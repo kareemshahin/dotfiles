@@ -6,7 +6,7 @@ let g:coc_global_extensions = [
 \ 'coc-css',
 \ 'coc-yaml',
 \ 'coc-solargraph',
-\ 'coc-python',
+\ 'coc-pyright',
 \ 'coc-go',
 \ ]
 call plug#begin(expand('~/.vim/plugged'))
@@ -14,6 +14,7 @@ Plug 'morhetz/gruvbox'
 Plug 'vim-ruby/vim-ruby'
 Plug 'slim-template/vim-slim'
 Plug 'w0rp/ale'
+Plug 'psf/black'
 Plug 'chriskempson/base16-vim'
 Plug 'hashivim/vim-terraform'
 Plug 'pangloss/vim-javascript'
@@ -21,10 +22,12 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-dotenv'
 Plug 'janko/vim-test'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'preservim/nerdtree'
 call plug#end()
 
 syntax on
@@ -40,6 +43,10 @@ set visualbell
 set noerrorbells
 set ttimeoutlen=0
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+set nobackup
+set nowritebackup
+set noswapfile
 
 " folding
 set foldenable          " enable folding
@@ -60,6 +67,12 @@ noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
+
+" nerdtree
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+"python
+let g:python3_host_prog = expand('~/.asdf/shims/python3')
 
 " ctrl-p
 let g:ctrlp_show_hidden = 1
@@ -82,4 +95,6 @@ function! s:TrimTrailingWhitespace()
 endfunction
 autocmd BufWritePre * call s:TrimTrailingWhitespace()
 
-colorscheme nord
+set termguicolors
+"colorscheme nord
+colorscheme gruvbox

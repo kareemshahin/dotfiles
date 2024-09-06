@@ -26,7 +26,6 @@ Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-dotenv'
 Plug 'janko/vim-test'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'preservim/nerdtree'
 call plug#end()
 
@@ -70,6 +69,9 @@ noremap <C-l> <C-w>l
 
 " nerdtree
 nnoremap <C-t> :NERDTreeToggle<CR>
+
+" coc.nvim autocompletion on CR
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 
 "python
 let g:python3_host_prog = expand('~/.asdf/shims/python3')

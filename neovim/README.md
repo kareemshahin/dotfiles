@@ -1,3 +1,3 @@
 # Neovim
 
-Neovim Lua Config 
+Neovim Lua Config. For `vim`, see [here](../vim)

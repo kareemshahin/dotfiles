@@ -1,6 +1,6 @@
 -- Basic settings
-vim.cmd("syntax on")
-vim.cmd("filetype plugin indent on")
+-- vim.cmd("syntax on")
+-- vim.cmd("filetype plugin indent on")
 
 vim.opt.backspace = { "indent", "eol", "start" }
 vim.opt.autoindent = true
@@ -60,7 +60,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 -- UI
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 -- vim.cmd("colorscheme nord")
 -- vim.cmd("colorscheme gruvbox")
 
@@ -70,6 +70,5 @@ vim.opt.termguicolors = true
 
 -- Optional statusline (commented out, as in original)
 -- vim.opt.statusline = '[%n] %<%.99f %h%w%m%r%y %{fugitive#statusline()}%{exists("*CapsLockStatusline")?CapsLockStatusline():""}%=%-16( %l,%c-%v %) %P'
-
 
 require("config.lazy")
